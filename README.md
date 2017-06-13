@@ -2,18 +2,19 @@
 ## ini配置文件管理
 ### 表结构
 
-| Field       | Type          | Null | Key  | Default | Extra           | 
-| -------     | ----          | ---- | ---- | ------- | -----           |
-| id          | int(11)       | NO   | PRI  |         | auto_increment  |
-| project     | string(80)    | NO   |      | NULL    |                 |
-| section     | string(50)    | NO   |      | NULL    |                 |
-| key         | string(50)    | NO   |      | NULL    |                 |
-| envir_ts    | string(1500)  | YES  |      | NULL    |                 |
-| envir_cs    | string(1500)  | YES  |      | NULL    |                 |
-| envir_zs    | string(1500)  | YES  |      | NULL    |                 |
-| encryption  | int(2)        | NO   |      | 0       |                 |
-| notes       | string(1000)  | NO   |      | NULL    |                 |
-| update_time | datetime      | NO   |      | NULL    |                 |
+| Field       | Type           | Null | Key  | Default | Extra           | 
+| -------     | ----           | ---- | ---- | ------- | -----           |
+| id          | int(11)        | NO   | PRI  |         | auto_increment  |
+| project     | string(80)     | NO   |      | NULL    |                 |
+| section     | string(50)     | NO   |      | NULL    |                 |
+| key         | string(50)     | NO   |      | NULL    |                 |
+| value_ts    | varchar(2000)  | YES  |      | NULL    |                 |
+| value_cs    | varchar(2000)  | YES  |      | NULL    |                 |
+| value_yf    | varchar(2000)  | YES  |      | NULL    |                 |
+| value_zs    | varchar(2000)  | YES  |      | NULL    |                 |
+| encryption  | varchar(2)     | NO   |      | 0       |                 |
+| notes       | string(1000)   | NO   |      | NULL    |                 |
+| update_time | datetime       | NO   |      | NULL    |                 |
 ###
 ### API访问
 - 获取配置  
