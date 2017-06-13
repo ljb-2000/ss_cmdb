@@ -17,7 +17,7 @@
 ###
 ### API访问
 - 获取配置  
-  - 接口地址：`/v1/conf/info_ini` 
+  - 接口地址：`/v1/conf/ini` 
   - 请求方式：GET
 
 ###
@@ -25,82 +25,74 @@
 | --          | --     | --       | --       |
 | project     | string | 是       | 项目名称 |
 | environment | string | 是       | 环境名称 | 
-| section     | string | 否       | 节       |
-| key         | string | 否       | 键       |
 
-示例:    
+示例:  
+url:/v1/conf/ini/exam_server/?huanjing=cs
 ```json
 {
-  "project": "exam_server",
-  "environment": "envir_cs",
-  "section": "default",
-  "key": "app_name",
+  "env": "cs",
 }
 ```
 
 - 更新配置
- - 接口地址 `/v1/conf/info_ini` 
+ - 接口地址 `/v1/conf/ini`  
  - 请求方式：PATCH
 
 | 参数名称    | 类型   | 是否必要 | 备注     |
-| --          | --     | --       | --       |
-| project     | string | 是       | 项目名称 |
-| environment | string | 否       | 环境名称 | 
-| section     | string | 否       | 节       |
-| key         | string | 否       | 键       |
-| encryption  | int    | 否       | 加密类型 |
+| --         | --     | --       | --      |
+| value_ts   | string | 否       | 调试值   |
+| value_cs   | string | 否       | 测试值   | 
+| value_yf   | string | 否       | 预发布   |
+| value_zs   | string | 否       | 正式值   |
 
-示例:    
+示例:  
+url: /v1/conf/ini?pid=35&value_cs=80 
 ```json
 {
-  "project": "exam_server",
-  "environment": "envir_cs",
-  "section": "default",
-  "key": "app_name",
-  "encryption": 0,
+  "id": "30",
+  "value_cs": "80"
 }
 ```
 
 - 删除配置
- - 接口地址 `/v1/conf/info_int`
+ - 接口地址 `/v1/conf/ini`
  - 请求方式：DELETE
 
-| 参数名称    | 类型   | 是否必要 | 备注     |
-| --          | --     | --       | --       |
-| project     | string | 是       | 项目名称 |
-| environment | string | 否       | 环境名称 | 
-| section     | string | 否       | 节       |
-| key         | string | 否       | 键       |
+| 参数名称    | 类型   | 是否必要  | 备注     |
+| --         | --     | --       | --       |
+| id         | string | 是       | 主键ID |
+  
 
 示例:    
 ```json
 {
-  "project": "exam_server",
-  "environment": "envir_cs",
-  "section": "default",
-  "key": "app_name",
+  "id": "30",
 }
 ```
 
 - 新建配置
- - 接口地址 `/v1/conf/info_ini`
+ - 接口地址 `/v1/conf/ini`
  - 请求方式：POST
 
 | 参数名称    | 类型   | 是否必要 | 备注     |
 | --          | --     | --       | --       |
-| project     | string | 是       | 项目名称 |
-| environment | string | 否       | 环境名称 | 
-| section     | string | 否       | 节       |
-| key         | string | 否       | 键       |
-| encryption  | int    | 否       | 加密类型 |
+| project     | string | 是       | 项目名称 | 
+| section     | string | 是       | 节       |
+| key         | string | 是       | 键       |
+| value_ts    | string | 否       | 值       |
+| value_cs    | string | 否       | 值       |
+| value_yf    | string | 否       | 值       |
+| value_zs    | string | 否       | 值       |
+| encryption  | int    | 是       | 加密类型 |
 
-示例:    
+示例:  
+url: /v1/conf/ini?project=exam_server07&section=default&key=service_sso2_port&value_cs=80&encryption=0 
 ```json
 {
   "project": "exam_server",
-  "environment": "envir_cs",
   "section": "default",
   "key": "app_name",
+  "value_cs": "exam"
   "encryption": 0,
 }
 ```
