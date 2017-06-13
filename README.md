@@ -94,6 +94,6 @@ url: /v1/conf/ini?project=exam_server07&section=default&key=service_sso2_port&va
   "section": "default",
   "key": "app_name",
   "value_cs": "exam"
-  "encryption": 0,
+  "encryption": "0",
 }
 ```
