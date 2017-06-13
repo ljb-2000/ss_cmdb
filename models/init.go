@@ -42,10 +42,12 @@ func DbInit() {
 	}
 
 	orm.RegisterDriver("mysql", orm.DRMySQL)
-	conn := wdbUser + ":" + wdbPawd + "@tcp(" + wdbHost + ":" + wdbPort + ")/" + wdbName + "?charset=" + wdbCharset
+	//orm.DefaultTimeLoc = time.UTC
+	//orm.DefaultTimeLoc = time.Location
+	orm.DefaultTimeLoc, _ = time.LoadLocation("Asia/Shanghai")
+	conn := wdbUser + ":" + wdbPawd + "@tcp(" + wdbHost + ":" + wdbPort + ")/" + wdbName + "?charset=" + wdbCharset + "&loc=Local"
 	orm.RegisterDataBase("default", "mysql", conn)
-	conn_read := rdbUser + ":" + rdbPawd + "@tcp(" + rdbHost + ":" + rdbPort + ")/" + rdbName + "?charset=" + rdbCharset
+	conn_read := rdbUser + ":" + rdbPawd + "@tcp(" + rdbHost + ":" + rdbPort + ")/" + rdbName + "?charset=" + rdbCharset + "&loc=Local"
 	orm.RegisterDataBase("read", "mysql", conn_read)
-	orm.DefaultTimeLoc = time.UTC
 	orm.RunSyncdb("default", false, true)
 }

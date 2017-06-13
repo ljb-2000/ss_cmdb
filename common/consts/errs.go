@@ -12,6 +12,18 @@ const (
 	ERROR_MSG_CMDB_PROJECT      = "非法项目名"
 	ERROR_CODE_CMDB_ENVIRONMENT = "102"
 	ERROR_MSG_CMDB_ENVIRONMENT  = "非法环境名"
+	ERROR_MSG_CMDB_GETINFO      = "获取配置失败"
+	SUCC_MSG_CMDB_GETINFO       = "获取配置成功"
+	ERROR_MSG_CMDB_INSERTINFO   = "添加配置失败"
+	SUCC_MSG_CMDB_INSERTINFO    = "添加配置成功"
+	ERROR_MSG_CMDB_ID           = "请输入正确的ID"
+	ERROR_MSG_CMDB_DELETEINFO   = "删除配置失败"
+	SUCC_MSG_CMDB_DELETEINFO    = "删除配置成功"
+	ERROR_MSG_CMDB_UPDATEINFO   = "更新配置失败"
+	SUCC_MSG_CMDB_UPDATEINFO    = "更新配置成功"
+	ERROR_MSG_CMDB_UPDATE       = "只能修改指定值"
+	SUCC_MSG_CMDB_GET_ALL       = "获取项目列表成功"
+	ERROR_MSG_CMDB_GET_ALL      = "获取项目列表失败"
 
 	STATUS_VALID    = 10  // 账号有效或者已启用
 	STATUS_INVALID  = -10 // 临时
