@@ -7,7 +7,7 @@ import (
 
 func init() {
 
-	beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"],
+	beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/:project`,
@@ -15,7 +15,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"],
+	beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/`,
@@ -23,7 +23,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"],
+	beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"],
 		beego.ControllerComments{
 			Method: "Delete",
 			Router: `/:pid`,
@@ -31,7 +31,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"],
+	beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"],
 		beego.ControllerComments{
 			Method: "Patch",
 			Router: `/`,
@@ -39,7 +39,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["ss_cmdb/controllers:InfoIniController"],
+	beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"] = append(beego.GlobalControllerRouter["github.com/ss1917/ss_cmdb/controllers:InfoIniController"],
 		beego.ControllerComments{
 			Method: "GetAll",
 			Router: `/`,

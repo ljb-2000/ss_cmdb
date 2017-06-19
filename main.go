@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
-	_ "ss_cmdb/routers"
+	_ "github.com/ss1917/ss_cmdb/routers"
 )
 
 func main() {

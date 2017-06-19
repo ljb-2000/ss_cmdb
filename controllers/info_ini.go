@@ -1,13 +1,11 @@
 package controllers
 
 import (
-	//"encoding/json"
 	"fmt"
-	//"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego"
-	"ss_cmdb/common/consts"
-	"ss_cmdb/common/utils"
-	"ss_cmdb/models"
+	"github.com/ss1917/ss_cmdb/common/consts"
+	"github.com/ss1917/ss_cmdb/common/utils"
+	"github.com/ss1917/ss_cmdb/models"
 	"strconv"
 	"time"
 )

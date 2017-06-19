@@ -2,7 +2,6 @@ package models
 
 import (
 	//"errors"
-	//"github.com/astaxie/beego"
 	//"fmt"
 	"github.com/astaxie/beego/orm"
 	"time"

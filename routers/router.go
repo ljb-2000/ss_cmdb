@@ -8,7 +8,7 @@
 package routers
 
 import (
-	"ss_cmdb/controllers"
+	"github.com/ss1917/ss_cmdb/controllers"
 
 	"github.com/astaxie/beego"
 )
