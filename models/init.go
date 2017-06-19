@@ -1,14 +1,17 @@
 package models
 
 import (
+	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
+	_ "github.com/astaxie/beego/session/redis"
 	_ "github.com/go-sql-driver/mysql"
 	"time"
 )
 
 func init() {
 	DbInit()
+	//SessionInit()
 
 }
 
@@ -50,4 +53,8 @@ func DbInit() {
 	conn_read := rdbUser + ":" + rdbPawd + "@tcp(" + rdbHost + ":" + rdbPort + ")/" + rdbName + "?charset=" + rdbCharset + "&loc=Local"
 	orm.RegisterDataBase("read", "mysql", conn_read)
 	orm.RunSyncdb("default", false, true)
+}
+
+func SessionInit() {
+	fmt.Println(beego.BConfig.WebConfig.Session.SessionProvider)
 }

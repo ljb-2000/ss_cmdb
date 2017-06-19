@@ -97,3 +97,7 @@ url: /v1/conf/ini?project=exam_server07&section=default&key=service_sso2_port&va
   "encryption": "0",
 }
 ```
+###安装
+go get github.com/astaxie/beego
+go get github.com/go-sql-driver/mysql
+go get github.com/astaxie/beego/session/redis

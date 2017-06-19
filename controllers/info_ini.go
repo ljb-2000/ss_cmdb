@@ -30,48 +30,20 @@ func (this *InfoIniController) Get() {
 	type ProInfo struct {
 		Section     string    `json:"section"`
 		Key         string    `json:"key"`
-		Value       string    `json:"value"`
+		Value_ts    string    `json:"ts"`
+		Value_cs    string    `json:"cs"`
+		Value_yf    string    `json:"yf"`
+		Value_zs    string    `json:"zs"`
 		Encryption  string    `json:"encryption"`
 		Notes       string    `json:"notes"`
 		Update_time time.Time `json:"update_time"`
 	}
 	//获取输入参数
 	project := this.GetString(":project")
-	environment := this.GetString("huanjing")
-	//判断必填参数
-	if project == "" {
-		this.Data["json"] = map[string]interface{}{
-			"project": project,
-			"status":  consts.ErraCode,
-			"msg":     consts.ERROR_MSG_CMDB_PROJECT,
-		}
-		this.ServeJSON()
-		return
-	}
-
 	var (
 		conf                = new(models.ConfIni)
 		ProInfos []*ProInfo = []*ProInfo{}
-		ValueEnv            = ""
 	)
-	//判断环境
-	switch {
-	case environment == "ts":
-		ValueEnv = "Value_ts"
-	case environment == "cs":
-		ValueEnv = "Value_cs"
-	case environment == "yf":
-		ValueEnv = "Value_yf"
-	case environment == "zs":
-		ValueEnv = "Value_zs"
-	default:
-		this.Data["json"] = map[string]interface{}{
-			"status": consts.ErraCode,
-			"msg":    consts.ERROR_MSG_CMDB_ENVIRONMENT,
-		}
-		this.ServeJSON()
-		return
-	}
 
 	if get_info, err := conf.Getproject(project); err != nil {
 		this.Data["json"] = map[string]interface{}{
@@ -86,7 +58,10 @@ func (this *InfoIniController) Get() {
 			ProInfos = append(ProInfos, &ProInfo{
 				Section:     m["Section"].(string),
 				Key:         m["Key"].(string),
-				Value:       m[ValueEnv].(string),
+				Value_ts:    m["Value_ts"].(string),
+				Value_cs:    m["Value_cs"].(string),
+				Value_yf:    m["Value_yf"].(string),
+				Value_zs:    m["Value_zs"].(string),
 				Encryption:  m["Encryption"].(string),
 				Notes:       m["Notes"].(string),
 				Update_time: m["Update_time"].(time.Time),
@@ -94,10 +69,9 @@ func (this *InfoIniController) Get() {
 		}
 
 		this.Data["json"] = map[string]interface{}{
-			project:      ProInfos,
-			"encryption": environment,
-			"status":     consts.SuccCode,
-			"msg":        consts.SUCC_MSG_CMDB_GETINFO,
+			project:  ProInfos,
+			"status": consts.SuccCode,
+			"msg":    consts.SUCC_MSG_CMDB_GETINFO,
 		}
 		this.ServeJSON()
 		return

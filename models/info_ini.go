@@ -17,12 +17,12 @@ type ConfIni struct {
 	Project     string    `orm:"column(project);size(80)"`
 	Section     string    `orm:"column(section);size(50)"`
 	Key         string    `orm:"column(key);size(50)"`
-	Value_ts    string    `orm:"column(value_ts);size(2000);kongk"`
-	Value_cs    string    `orm:"column(value_cs);size(2000);kongk"`
-	Value_yf    string    `orm:"column(value_yf);size(2000);kongk"`
-	Value_zs    string    `orm:"column(value_zs);size(2000);kongk"`
+	Value_ts    string    `orm:"column(value_ts);size(2000);kkkk"`
+	Value_cs    string    `orm:"column(value_cs);size(2000);kkkk"`
+	Value_yf    string    `orm:"column(value_yf);size(2000);kkkk"`
+	Value_zs    string    `orm:"column(value_zs);size(2000);kkkk"`
 	Encryption  string    `orm:"column(encryption);size(2);0"`
-	Notes       string    `orm:"column(notes);size(300);kongkong"`
+	Notes       string    `orm:"column(notes);size(300);kkkk"`
 	Update_time time.Time `orm:"column(update_time);type(datetime)"`
 }
 
